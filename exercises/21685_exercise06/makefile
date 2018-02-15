@@ -12,7 +12,7 @@ CC = gcc
 CFLAGS = -Wall -I.
 
 # DEPS is for dependencies (e.g. local header files)
-DEPS =
+DEPS = sqroot.h
 
 # OBJ lists all object files (.o files) that the executable target depends on
 OBJ = exercise06.o
