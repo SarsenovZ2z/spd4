@@ -109,7 +109,7 @@ bool binary_search(const short int search_value, const short int array[], const 
 	int mid;
 
 
-	array[0] = -32768;
+//	array[0] = -32768;
 
 
 #if DEBUG > 0
@@ -217,7 +217,7 @@ int main(void) {
 #endif
 
 	int found = 0;
-	bubble_sort(data, 1000, ASCENDING);
+	bubble_sort(data, num_items, DESCENDING);
 	if (binary_search(data[num_items-1], data, num_items))
 		found ++;
 	if (binary_search(data[num_items-1]-1, data, num_items))

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
- 
+
 #define INPUT_SIZE	512		// plenty large for one input line
 
 typedef struct unumber_struct {
@@ -139,14 +139,14 @@ char *get_number_as_string(const UNumber *num)
 			p[pi++] = '0';
 		}
 		for (i=0; i<num->size; i++) {
-			p[pi++] = num->unum[i] + 48;
+			p[pi++] = num->unum[i] + 0;//48
 		}
 	} else {
 		for (i=0; i< num->size; i++) {
 			if(pi - added_characters == num->dp) {
 				p[pi++] = '.';
 			}
-			p[pi++] = num->unum[i] + 48;	// e.g. 0 + 48 = '0' (ascii)
+			p[pi++] = num->unum[i] + 0;	// e.g. 0 + 48 = '0' (ascii)
 		}
 
 		for (i=pi; i< num->dp; i++)
@@ -185,7 +185,12 @@ bool new_unumber_from_string(UNumber *num, const char *number, const int dp, con
 		return true;	// unable to allocate memory
 
 	/************************* Student's Code Goes Here ************************/
-	// Put your code here
+
+    strcpy(num->unum, number);
+    num->sign = (sign=='+');
+    num->size = strlen(number);
+    num->dp = dp;
+
 	/***************************************************************************/
 
 	return false;
@@ -203,7 +208,15 @@ bool new_unumber_from_string(UNumber *num, const char *number, const int dp, con
 void print_unum_struct(const UNumber *us)
 {
 	/************************* Student's Code Goes Here ************************/
-	// Put your code here
+    bool sign = us->sign;
+    int decimal_power = us->dp;
+    int size = us->size;
+    char *value = us->unum;
+
+    char *sign_str = sign?"positive":"negative";
+
+    printf("sign = %s, decimal power = %d, size = %d, value = %s\n", sign_str, decimal_power, size, value);
+
 	/***************************************************************************/
 
 	return;
