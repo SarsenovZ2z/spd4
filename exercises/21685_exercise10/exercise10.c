@@ -34,8 +34,8 @@ int allocated_memory_blocks;
  *		in: zero - if true, calloc is used to zero allocated memory, else malloc
  *					(memory not zeroed)
  *
- * Returns: pointer to the allocated memory or NULL if memory could not be
  * 		allocated.  The returned pointer must be cast to the appropriate
+ * Returns: pointer to the allocated memory or NULL if memory could not be
  * 		pointer type by the caller.
  */
 void *allocate_memory(const int num, const int size, const bool zero)
@@ -187,7 +187,8 @@ bool new_unumber_from_string(UNumber *num, const char *number, const int dp, con
 	/************************* Student's Code Goes Here ************************/
 
     strcpy(num->unum, number);
-    num->sign = (sign=='+');
+//    num->sign = (sign=='+');
+ 	(*num).sign = (sign=='+');
     num->size = strlen(number);
     num->dp = dp;
 

@@ -17,17 +17,18 @@ double *read_file(const char *file_name, size_t *size);
  *		0 on success, else 1
  */
 
-void Z2zsort(double *a, int end) {
-    for (int i=0;i<end-1;++i) {
+
+void Z2zsort(double *array, int sz) {
+    for (int i=0;i<sz-1;++i) {
         int mn = i;
-        for (int j=i+1;j<end;++j) {
-            if (*(a+j)-*(a+mn)<0) {
+        for (int j=i+1;j<sz;++j) {
+            if (array[mn]>array[j]) {
                 mn = j;
             }
         }
-        *(a+i)+= *(a+mn);
-        *(a+mn) = *(a+i)-*(a+mn);
-        *(a+i) = *(a+i)-*(a+mn);
+        double tmp = array[i];
+        array[i] = array[mn];
+        array[mn] = tmp;
     }
 }
 

@@ -22,6 +22,8 @@ char *read_file(const char *file_name);
  * Returns:
  *		0 on success, else 1
  */
+
+
 int main(void)
 {
     clock_t start, stop, elapsed;

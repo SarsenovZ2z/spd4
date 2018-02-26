@@ -7,21 +7,11 @@
 
 double *read_file(const char *file_name, size_t *size);
 
-int Z2zbinsearch(double *a, int l, int r, double t) {
-    if (l>=r) {
-        return - 1;
-    }
-    int mid = (l+r)/2;
-    if (*(a+mid)<t) {
-        l = mid+1;
-    }
-    else if (*(a+mid)>t) {
-        r = mid-1;
-    }
-    else {
-        return mid;
-    }
-    return (a, l, r, t);
+int Z2Z2zbinsearch(double *array, int l, int r, double t) {
+
+    int mid = (r+l)/2;
+    if (array[])
+
 }
 
 /*
